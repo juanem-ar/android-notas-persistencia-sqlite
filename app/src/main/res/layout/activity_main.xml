@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:gravity="center"
+        android:text="@string/login_title"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/codigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:autofillHints="username"
+        android:background="@color/transparent"
+        android:drawableStart="@drawable/baseline_numbers_24"
+        android:drawablePadding="20dp"
+        android:hint="Código de la Tarea"
+        android:inputType="number"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/signin"
+        tools:layout_editor_absoluteX="19dp" />
+
+    <EditText
+        android:id="@+id/tarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:autofillHints="emailAddress"
+        android:background="@color/transparent"
+        android:drawableStart="@drawable/baseline_title_24"
+        android:drawablePadding="20dp"
+        android:hint="Describí tu tarea"
+        android:inputType="text|textLongMessage|textMultiLine"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/codigo"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/agregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:padding="10dp"
+        android:text="Agregar"
+        android:textColor="#5E35B1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tarea"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/modificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:padding="10dp"
+        android:text="Modificar"
+        android:textColor="#5E35B1"
+        app:layout_constraintEnd_toStartOf="@+id/eliminar"
+        app:layout_constraintStart_toEndOf="@+id/agregar"
+        app:layout_constraintTop_toBottomOf="@+id/tarea"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:padding="10dp"
+        android:text="Eliminar"
+        android:textColor="#5E35B1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tarea"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modificar">
+
+        <EditText
+            android:id="@+id/listaTareas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:cursorVisible="false"
+            android:focusableInTouchMode="false"
+            android:inputType="none"
+            android:maxLines="10"
+            android:padding="20dp"
+            android:scrollbars="vertical"
+            android:textColor="#5E35B1" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
